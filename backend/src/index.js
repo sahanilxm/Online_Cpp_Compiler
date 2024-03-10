@@ -1,9 +1,11 @@
 const express = require('express');
 
 const { PORT } = require('./config/server.config.js');
+const dbConnect = require('./config/db.config.js');
 
 const startServer = () => {
 
+    dbConnect;
     const app = express();
 
     app.listen(PORT, () => {
