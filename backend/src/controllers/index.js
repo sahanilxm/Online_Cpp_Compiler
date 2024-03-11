@@ -46,12 +46,12 @@ const runCode = async (req, res) => {
     let code;
     try{
         const files = await generateFile(language, codeBody, input);
-        const [filepath, inputFilePath] = files;
+        const [filePath, inputFilePath] = files;
 
-        code = await new Code({ language, filepath, inputFilePath}).save();
+        code = await new Code({ language, filePath, inputFilePath}).save();
 
         const codeID = code["_id"];
-        addCodeToQueue(codeID);
+        await addCodeToQueue(codeID);
 
         return res.status(201).json({
             success : true,
