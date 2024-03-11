@@ -138,7 +138,7 @@ function App() {
             <div id="header" className="header-dark">
                 <h3 id="app-name" className="app-name-dark">
                     <i className="fas fa-solid fa-cube" aria-hidden="true"></i>
-                    &nbsp; Online C++ Code Runner
+                    &nbsp; Online C++ Compiler
                 </h3>
 
                 <div className="nav-right-options">
