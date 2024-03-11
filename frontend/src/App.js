@@ -112,16 +112,13 @@ function App() {
                         );
                     } else {
                         const errorObject = JSON.parse(codeOutput);
-                        // console.log(errorObject);
                         setOutput(
                             `Code Execution Status: ${codeStatus}\n\n${errorObject.stderr}`
                         );
                     }
                     clearInterval(intervalId);
                 } else {
-                    console.log(dataRes);
                     setStatus("Error !!! ");
-                    console.error(error);
                     setOutput(error);
                     clearInterval(intervalId);
                 }
@@ -141,7 +138,7 @@ function App() {
             <div id="header" className="header-dark">
                 <h3 id="app-name" className="app-name-dark">
                     <i className="fas fa-solid fa-cube" aria-hidden="true"></i>
-                    &nbsp; Online Code Runner
+                    &nbsp; Online C++ Code Runner
                 </h3>
 
                 <div className="nav-right-options">
@@ -150,11 +147,6 @@ function App() {
                         className="fas fa-solid fa-sun fa-2x nav-icons theme-icon-light"
                         aria-hidden="true"
                         onClick={handleThemeChange}
-                    ></i>
-
-                    <i
-                        className="fas fa-solid fa-swatchbook tutorial-icon nav-icons fa-2x"
-                        aria-hidden="true"
                     ></i>
                 </div>
             </div>
