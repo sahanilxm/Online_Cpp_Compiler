@@ -81,7 +81,7 @@ function App() {
             setCodeDetails(null);
             setOutput(`Code Execution Status: Running`);
             const { data } = await axios.post(
-                "http://localhost:5000/run",
+                "https://sahanilxm-online-cpp-compiler-server.vercel.app/run",
                 payload
             );
             setCodeId(data.codeID);
@@ -92,7 +92,7 @@ function App() {
                 setStatus("Running");
                 setOutput(`Code Execution Status: Running`);
                 const { data: dataRes } = await axios.get(
-                    "http://localhost:5000/status",
+                    "https://sahanilxm-online-cpp-compiler-server.vercel.app/status",
                     { params: { id: data.codeID } }
                 );
                 const { success, code, error } = dataRes;
