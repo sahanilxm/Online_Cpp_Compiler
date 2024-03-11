@@ -12,7 +12,8 @@ const startServer = () => {
 
     app.use(cors({
         origin: [
-            "http://localhost:3000/"
+            "http://localhost:3000/",
+            "https://sahanilxm-online-cpp-compiler.vercel.app/"
         ],
         methods: ["GET", "POST"],
         credentials: true,
