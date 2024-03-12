@@ -16,6 +16,8 @@ const startServer = () => {
             "https://sahanilxm-online-cpp-compiler.vercel.app/"
         ],
         methods: ["GET", "POST"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        exposedHeaders: ["Content-Length", "X-Foo", "X-Bar"],
     }));
     app.use(express.json());
     app.use(express.urlencoded({extended : true}));
