@@ -15,7 +15,7 @@ const startServer = () => {
             "http://localhost:3000/",
             "https://sahanilxm-online-cpp-compiler.vercel.app/"
         ],
-        methods: ["GET", "POST"],
+        methods: ["GET", "POST", "OPTIONS"],
         allowedHeaders: ["Content-Type", "Authorization"],
         exposedHeaders: ["Content-Length", "X-Foo", "X-Bar"],
     }));
