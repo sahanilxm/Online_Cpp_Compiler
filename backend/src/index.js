@@ -29,7 +29,17 @@ const startServer = () => {
         next();
     });
 
-    app.options('*', cors());
+    // Set preflight
+    app.options("*", (req, res) => {
+        console.log("preflight");
+        if(req.headers.origin === "https://badmintown.onrender.com" && allowMethods.includes(req.headers["access-control-request-method"]) && allowHeaders.includes(req.headers["access-control-request-headers"])){
+            console.log("pass");
+            return res.status(204).send();
+        }
+        else{
+            console.log("fail");
+        }
+    });
     app.use(express.json());
     app.use(express.urlencoded({extended : true}));
     app.use(router);
